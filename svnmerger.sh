@@ -1,8 +1,6 @@
 #!/bin/sh
 
-/**
- * A simple shell script used to merge braches of Subversion.
-**/
+## A simple shell script used to merge braches of Subversion.
 versions=`svn log $2 --stop-on-copy | grep '^r[0-9]*' | awk '{print $1}'`
 head_version=`echo $versions | awk '{print $1}' | grep -o '[0-9]*$'`
 tail_version=`echo $versions | awk '{print $NF}' | grep -o '[0-9]*$'`
